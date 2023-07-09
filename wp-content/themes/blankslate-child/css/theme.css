@@ -1,0 +1,76 @@
+body {
+    font-family: "Syne", sans-serif;
+  }
+
+/* Header */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#menu-navigation {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+#menu-navigation a {
+    text-decoration: none;
+    color: black;
+}
+
+.image-logo {
+    margin-top: 5px;
+    margin-left: 10px;
+    width: 200px;
+    height: auto;
+
+}
+
+#menu-navigation li.menu-item a[href*="commander"] {
+    padding: 18px 40px;
+    background-color: #DC9F96;
+    color: white;
+}
+
+
+/* Home page  */
+.home-page-title {
+color: #3B8E46;
+text-align: center;
+font-family: Syne;
+font-size: 38px;
+font-style: normal;
+font-weight: 800;
+line-height: normal;
+text-transform: uppercase;
+}
+
+
+/* Footer */
+#footer {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+}
+
+
+/* Responsive  */
+@media screen and (min-width: 320px) {
+
+    /* Modifier la mise en page pour les petits écrans */
+    #header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #site-title {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
