@@ -2,11 +2,13 @@ body {
     font-family: "Syne", sans-serif;
 }
 
+
 /* Header */
 #header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 80px;
 }
 
 #menu-navigation {
@@ -27,54 +29,63 @@ body {
     margin-left: 10px;
     width: 200px;
     height: auto;
-
 }
 
 #menu-navigation li.menu-item a[href*="commander"] {
     display: flex;
-    padding: 18px 40px;
+    padding: 32px 40px;
     background-color: #DC9F96;
     color: white;
 }
 
+.admin-link {
+    background-color: red;
+}
+
 /* Footer */
 #footer {
+    background: white;
     display: flex;
     justify-content: center;
     padding: 20px 0px;
+    position: relative;
+    z-index: 5;
 }
 
 
 /* Home  */
-.home-page-title1 {
+.home-page-title-green {
     color: #3B8E46;
     text-align: center;
-    font-family: Syne;
     font-size: 38px;
-    font-style: normal;
     font-weight: 800;
-    line-height: normal;
     text-transform: uppercase;
 }
 
-.left-flower {
-    display: inline;
-    position: absolute;
-    top: 53%;
-    left: 31.3%;
-}
-
-.right-flower {
-    display: inline;
-    position: absolute;
-    top: 53%;
-    right: 32%;
-
-}
-
+.left-flower,
+.right-flower,
 .planty-can {
     display: inline;
     position: relative;
+}
+
+.left-flower {
+    z-index: 1;
+    float: left;
+    top: 20%;
+    left: 17.4%;
+}
+
+.right-flower {
+    z-index: 2;
+    float: right;
+    top: 20%;
+    right: 18.2%;
+}
+
+.planty-can {
+    z-index: 3;
+    float: left;
 }
 
 .planty-can-energy-drink {
@@ -82,15 +93,378 @@ body {
     justify-content: center;
 }
 
-/* Responsive  */
-@media screen and (max-width: 320px) {
+.home-page-title-h3::before {
+    content: url('http://localhost/planty/wp-content/themes/blankslate-child/images/svg-1.svg');
+    position: relative;
+    top: -70px;
+    z-index: 1;
+}
+.home-page-first-section::after {
+    content: url('http://localhost/planty/wp-content/themes/blankslate-child/images/svg-2.svg');
+    position: relative; 
+    top: 3px;
+    z-index: 2;
+}
 
-    /* Modifier la mise en page pour les petits écrans */
+.home-page-title-h3 {
+    color: #3B8E46;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: -140px;
+}
+
+.home-page-title-pink {
+    color: #D2776A;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.home-page-p {
+    color: #000;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.image-fruit {
+    width: 393px;
+}
+
+.image-fraise {
+    margin-bottom: 40px;
+}
+
+.image-pamplemousse {
+    margin-bottom: 40px;
+}
+
+
+:where(.wp-block-columns.is-layout-flex) {
+    gap: 30px;
+}
+
+.flavor-group {
+    display: flex;
+    justify-content: center;
+}
+
+.text-fruit {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.home-page-button {
+    color: #FFF;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 37px;
+}
+
+.wp-block-button__link.has-background.wp-element-button {
+    padding: 9px 57px 9px 56px;
+}
+
+.home-page-title-green-2 {
+    color: #3B8E46;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.reviews-column {
+    display: flex;
+    flex-direction: row;
+}
+
+.home-page-p-description {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.marc-picture,
+.vero-picture,
+.fatiha-picture {
+    width: 180px;
+}
+
+.reviews {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.home-page-title-description-reviews {
+    display: flex;
+    margin-left: 30px;
+    margin-top: 50px;
+}
+
+.home-page-title-comments {
+    color: #3B8E46;
+    text-align: left;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.can1,
+.can2,
+.can3,
+.can4 {
+    display: inline;
+    position: relative;
+    width: 90%;
+}
+
+.can1 {
+    margin-left: -80px;
+    margin-right: -100px;
+    top: 162px;
+}
+
+.can2 {
+    margin-right: -100px;
+    top: 141px;
+}
+
+.can3 {
+    margin-right: -100px;
+    top: 162px;
+}
+
+.can4 {
+    top: 187px;
+}
+
+img.wp-image-390 {
+    /*étendre les canettes sur toute la largeur */
+    width: 100%;
+}
+
+
+/* Nous rencontrer  */
+
+.contact-section {
+    margin-top: -100px;
+}
+
+.nous-rencontrer-title {
+    color: #D2776A;
+    text-align: center;
+    font-size: 38px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.flower-image {
+    position: relative;
+    margin-left: 350px;
+    top: 85px;
+}
+
+
+.svg-nous-rencontrer::before {
+        content: url('http://localhost/planty/wp-content/themes/blankslate-child/images/svg-3.svg');
+        position: relative;
+        top: -50px;
+} 
+
+.svg-nous-rencontrer {
+    margin-top: -50px;
+}
+
+.nous-rencontrer-h3 {
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.team-name {
+    color: #000;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.team-group {
+    display: flex;
+    justify-content: center;
+}
+
+.team-column {
+    gap: 150px;
+    margin-bottom: -25px;
+}
+
+.nous-rencontrer-flower1 {
+    position: relative;
+    margin-left: 1100px;
+    top: -100px;
+}
+
+.wpcf7 {
+    display: flex;
+    justify-content: center;
+}
+
+.wpcf7-form-control {
+    border: 0;
+    margin-top: 13px;
+    margin-bottom: 22px;
+}
+
+.wpcf7-text {
+    width: 383px;
+    height: 71px;
+    border-radius: 7px;
+    box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
+}
+
+input[type="text"],
+input[type="submit"] {
+    border-radius: 7px;
+}
+
+.wpcf7-textarea {
+    width: 383px;
+    height: 237px;
+    border-radius: 7px;
+    background: #FFF;
+    box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
+}
+
+.contact-label {
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.wpcf7-submit {
+    display: flex;
+    width: 198px;
+    height: 55px;
+    padding: 9px 0px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #E0B9B4;
+    margin: auto;
+    color: #FFF;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 37px;
+}
+
+.nous-rencontrer-flower2 {
+    margin: -45px;
+    position: relative;
+    top: 540px;
+    right: 188px;
+}
+
+
+/* Commander */
+
+.commander-title {
+    color: #FFF;
+    text-align: center;
+    font-size: 38px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.separateur {
+    height: 1px;
+    background: #FFF;
+    margin-bottom: 40px;
+}
+
+.separateur-2 {
+    margin-bottom: 53px;
+}
+
+.commander-h3 {
+    color: #FFF;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 29px;
+}
+
+#commander-h3-first {
+    margin-bottom: 39px;
+}
+
+.fruit-order {
+    display: flex;
+    gap: 35px;
+}
+
+.quantity-input {
+    width: 82px;
+    height: 56px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 4px;
+    margin-right: 10px
+}
+
+.ok {
+    width: 100px;
+    height: 56px;
+    background-color: #E0B9B4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-info,
+.delivery-info {
+    display: inline-block;
+    vertical-align: top;
+    width: 48%;
+}
+
+.delivery-info {
+    padding-left: 40px;
+}
+
+.vertical-rule {
+    width: 1px;
+    height: 409px;
+    background-color: white;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 12px;
+    margin-left: 12px;
+}
+
+.button-order {
+    margin-top: 10px;
+}
+
+/* Responsive  */
+@media screen and (min-width: 320px) and (max-width: 768px) {
+
     #header {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
+        height: auto;
     }
 
     #site-title {
@@ -104,27 +478,98 @@ body {
     }
 
     #menu-navigation li.menu-item a[href*="commander"] {
-        padding: 15px 5px;
+        padding: 18px 17px;
     }
 
     /* Home page  */
 
-    .home-page-title1 {
-        font-size: 20px;
-    }
-
     .planty-can {
-        display: inline-block;
-        position: relative;
         width: 100px;
     }
 
     .left-flower,
     .right-flower {
-        display: inline;
-        position: absolute;
-        top: 65%;
-        width: 50px;
+        top: 18%;
+        width: 80px;
     }
 
+    .left-flower {
+        left: 17.6%;
+    }
+
+    .right-flower {
+        right: 18.5%;
+    }
+
+    .home-page-title-green {
+        font-size: 20px;
+    }
+
+    .home-page-title-h3 {
+        font-size: 20px;
+    }
+
+    .home-page-p {
+        font-size: 15px;
+    }
+    
+
+    /* Nous rencontrer  */
+
+
+    /* Commander */
+
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    /* Home page  */
+    .home-page-title-green {
+        font-size: 30px;
+    }
+
+    .planty-can {
+        width: 300px;
+    }
+
+    .left-flower,
+    .right-flower {
+        top: 30%;
+        width: 220px;
+    }
+
+    .left-flower {
+        left: 17.8%;
+    }
+
+    .right-flower {
+        right: 19%;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+
+    /* Home page  */
+    .home-page-title-green {
+        font-size: 33px;
+    }
+
+    .planty-can {
+        width: 350px;
+    }
+
+    .left-flower,
+    .right-flower {
+        top: 35%;
+        width: 230px;
+    }
+
+    .left-flower {
+        left: 18.3%;
+    }
+
+    .right-flower {
+        right: 19.5%;
+    }
 }

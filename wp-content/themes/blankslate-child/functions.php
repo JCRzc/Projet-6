@@ -15,3 +15,21 @@ function enqueue_custom_fonts()
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_custom_fonts');
+
+// Fonction pour ajouter le lien "Admin" dans le menu
+function add_link_admin_in_menu( $items, $args ) {
+    // Vérifier si l'utilisateur est connecté et s'il a le rôle d'administrateur
+    if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
+        // Créer le lien "Admin" avec la page d'administration WordPress
+        $admin_link = '<li><a href="' . admin_url() . '">Admin</a></li>';
+
+        // Trouver la position après laquelle insérer le lien "Admin"
+        $position = strpos( $items, '</a></li>', strpos( $items, 'Nous rencontrer' ) );
+        if ( $position !== false ) {
+            // Insérer le lien "Admin" à la position trouvée
+            $items = substr_replace( $items, $admin_link, $position + 9, 0 );
+        }
+    }
+    return $items;
+}
+add_filter( 'wp_nav_menu_items', 'add_link_admin_in_menu', 10, 2 );
