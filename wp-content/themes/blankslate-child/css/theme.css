@@ -2,6 +2,10 @@ body {
     font-family: "Syne", sans-serif;
 }
 
+.container {
+    max-width: 1440px;
+    margin: auto;
+}
 
 /* Header */
 #header {
@@ -52,6 +56,11 @@ body {
     z-index: 5;
 }
 
+#footer a {
+	text-decoration: none;
+	color: black;
+}
+
 
 /* Home  */
 .home-page-title-green {
@@ -96,12 +105,13 @@ body {
 .home-page-title-h3::before {
     content: url('http://localhost/planty/wp-content/themes/blankslate-child/images/svg-1.svg');
     position: relative;
-    top: -70px;
+    top: -4vmax;
     z-index: 1;
 }
+
 .home-page-first-section::after {
     content: url('http://localhost/planty/wp-content/themes/blankslate-child/images/svg-2.svg');
-    position: relative; 
+    position: relative;
     top: 3px;
     z-index: 2;
 }
@@ -111,7 +121,7 @@ body {
     text-align: center;
     font-size: 30px;
     font-weight: 700;
-    margin-top: -140px;
+    margin-top: -100px;
 }
 
 .home-page-title-pink {
@@ -141,15 +151,16 @@ body {
     margin-bottom: 40px;
 }
 
-
 :where(.wp-block-columns.is-layout-flex) {
     gap: 30px;
 }
 
-.flavor-group {
+.flavor-column {
     display: flex;
     justify-content: center;
+    margin-bottom: -20px;
 }
+
 
 .text-fruit {
     text-align: center;
@@ -217,35 +228,6 @@ body {
     margin-bottom: 15px;
 }
 
-.can1,
-.can2,
-.can3,
-.can4 {
-    display: inline;
-    position: relative;
-    width: 90%;
-}
-
-.can1 {
-    margin-left: -80px;
-    margin-right: -100px;
-    top: 162px;
-}
-
-.can2 {
-    margin-right: -100px;
-    top: 141px;
-}
-
-.can3 {
-    margin-right: -100px;
-    top: 162px;
-}
-
-.can4 {
-    top: 187px;
-}
-
 img.wp-image-390 {
     /*étendre les canettes sur toute la largeur */
     width: 100%;
@@ -268,16 +250,18 @@ img.wp-image-390 {
 
 .flower-image {
     position: relative;
-    margin-left: 350px;
+    margin-left: 100px;
     top: 85px;
+    width: 100%;
 }
 
 
 .svg-nous-rencontrer::before {
-        content: url('http://localhost/planty/wp-content/themes/blankslate-child/images/svg-3.svg');
-        position: relative;
-        top: -50px;
-} 
+    content: url('http://localhost/planty/wp-content/themes/blankslate-child/images/svg-3.svg');
+    position: relative;
+    top: -2vmax;
+    width: 100%;
+}
 
 .svg-nous-rencontrer {
     margin-top: -50px;
@@ -295,6 +279,10 @@ img.wp-image-390 {
     text-align: center;
     font-size: 20px;
     font-weight: 700;
+}
+
+.team-name-p {
+    font-size: 20px;
 }
 
 .team-group {
@@ -411,15 +399,45 @@ input[type="submit"] {
     gap: 35px;
 }
 
-.quantity-input {
+.quantity-input-2 {
     width: 82px;
     height: 56px;
     text-align: center;
-    border: 1px solid #ddd;
+    border: 1px solid transparent;
     border-radius: 4px;
-    padding: 4px;
-    margin-right: 10px
+    padding-right: 9px;
+    margin-left: -34px
 }
+
+input[type="number"].quantity-input-2::-webkit-inner-spin-button,
+input[type="number"].quantity-input-2::-webkit-outer-spin-button {
+    height: 80px;
+    opacity: 0;
+    z-index: 1;
+}
+
+.plus {
+    position: relative;
+    bottom: 13px;
+    right: 35.2px;
+    padding: 4.5px 14px;
+    border-top-right-radius: 4px;
+    color: #FFF;
+    background-color: #DC9F96;
+
+}
+
+.minus {
+    position: relative;
+    left: 48.5px;
+    top: 15px;
+    padding: 4px 14px;
+    border-bottom-right-radius: 4px;
+    color: #FFF;
+    background-color: #DC9F96;
+    z-index: 1;
+}
+
 
 .ok {
     width: 100px;
@@ -427,6 +445,9 @@ input[type="submit"] {
     background-color: #E0B9B4;
     color: #fff;
     border: none;
+    margin-left: -24px;
+    margin-top: 15px;
+    margin-bottom: 40px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -457,11 +478,12 @@ input[type="submit"] {
 }
 
 /* Responsive  */
-@media screen and (min-width: 320px) and (max-width: 768px) {
+
+@media screen and (min-width: 320px) and (max-width: 767.98px) {
 
     #header {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         justify-content: space-between;
         align-items: center;
         height: auto;
@@ -478,7 +500,7 @@ input[type="submit"] {
     }
 
     #menu-navigation li.menu-item a[href*="commander"] {
-        padding: 18px 17px;
+        padding: 18px 5px;
     }
 
     /* Home page  */
@@ -507,22 +529,212 @@ input[type="submit"] {
 
     .home-page-title-h3 {
         font-size: 20px;
+        margin-top: 0;
+    }
+
+    .home-page-title-h3::before {
+        top: -11vmin;
+    }
+
+    .home-page-first-section::after {
+        top: 4px;
     }
 
     .home-page-p {
         font-size: 15px;
     }
-    
+
+    .home-page-title-pink {
+        font-size: 18px;
+    }
+
+    .flavor-column {
+        margin-top: -10px;
+    }
+
+    .image-fruit {
+        width: 300px;
+        height: 175px;
+    }
+
+    .single-flavor-bloc {
+        display: flex;
+        justify-content: center;
+    }
+
+    .text-fruit {
+        font-size: 30px;
+    }
+
+    .wp-block-button__link.has-background.wp-element-button {
+        padding: 2px 10px;
+        font-size: 16px;
+    }
+
+    .home-page-title-green-2 {
+        font-size: 18px;
+    }
+
+    .marc-picture,
+    .vero-picture,
+    .fatiha-picture {
+        width: 70px;
+    }
+
+    .home-page-title-comments {
+        font-size: 20px;
+        margin-bottom: 4px;
+        margin-top: -48px;
+    }
+
+    .home-page-p-description {
+        font-size: 13px;
+    }
 
     /* Nous rencontrer  */
 
+    .flower-image {
+        width: 8%;
+        left: 42%;
+        top: 160px;
+        margin-top: -50px;
+        margin-left: 3%;
+    }
+
+    .nous-rencontrer-title {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    .nous-rencontrer-p {
+        margin-bottom: -45px;
+        font-size: 13px;
+    }
+
+    .nous-rencontrer-h3 {
+        font-size: 18px;
+        margin-top: 30px;
+    }
+
+    .svg-nous-rencontrer::before {
+        top: -50px;
+    }
+
+    .megane-picture,
+    .brooke-picture,
+    .sylvie-picture {
+        width: 80%;
+    }
+
+    .team-single-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-column {
+        gap: 30px;
+        margin-bottom: 130px;
+        flex-direction: column;
+    }
+
+    .team-name {
+        font-size: 16px;
+    }
+
+    .team-name-p {
+        font-size: 16px;
+    }
+
+    .nous-rencontrer-flower1 {
+        width: 30%;
+        margin-left: 70%;
+        margin-top: -100px;
+        top: -100px;
+    }
+
+    .nous-contacter-h3 {
+        margin-top: 0;
+        margin-bottom: 75px;
+    }
+
+    .wpcf7-form-control {
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .wpcf7-text {
+        width: 250px;
+        height: 45px;
+    }
+
+    .wpcf7-textarea {
+        width: 250px;
+        height: 110px;
+    }
+
+    .nous-rencontrer-flower2 {
+        top: 285px;
+        right: -14%;
+        width: 20%;
+    }
+
+    .contact-label {
+        font-size: 16px;
+    }
+
+    .wpcf7-submit {
+        width: 150px;
+        height: 50px;
+    }
 
     /* Commander */
 
+    .separateur {
+        width: 60%;
+    }
+
+    .separateur-2 {
+        width: 60%;
+    }
+
+    .commander-title {
+        font-size: 20px;
+    }
+
+    .commander-h3 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .fruit-order {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .vertical-rule {
+        display: none;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        margin-bottom: 30px;
+    }
+
+    .delivery-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        padding-left: 0;
+    }
 }
 
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023.98px) {
 
     /* Home page  */
     .home-page-title-green {
@@ -545,6 +757,191 @@ input[type="submit"] {
 
     .right-flower {
         right: 19%;
+    }
+
+    .home-page-title-h3 {
+        font-size: 25px;
+        margin-top: 0;
+    }
+
+    .home-page-title-h3::before {
+        top: -12vmin;
+    }
+
+    .home-page-p {
+        font-size: 16px;
+    }
+
+    .home-page-title-pink {
+        font-size: 26px;
+    }
+
+    .flavor-column {
+        margin-top: -20px;
+    }
+
+    .image-fruit {
+        width: 300px;
+        height: 175px;
+    }
+
+    .single-flavor-bloc {
+        display: flex;
+        justify-content: center;
+    }
+
+    .text-fruit {
+        font-size: 30px;
+    }
+
+    .wp-block-button__link.has-background.wp-element-button {
+        padding: 8px 25px;
+        font-size: 17px;
+    }
+
+    .home-page-title-green-2 {
+        font-size: 26px;
+    }
+
+    .marc-picture,
+    .vero-picture,
+    .fatiha-picture {
+        width: 140px;
+    }
+
+    .home-page-title-comments {
+        font-size: 28px;
+        margin-bottom: 29px;
+        margin-top: -48px;
+    }
+
+    .home-page-p-description {
+        font-size: 16px;
+    }
+
+    /* Nous rencontrer  */
+
+    .flower-image {
+        width: 10%;
+        left: 6%;
+        top: 75px;
+        margin-top: -50px;
+        margin-left: 3%;
+    }
+
+    .nous-rencontrer-title {
+        font-size: 25px;
+        margin-top: 35px;
+    }
+
+    .nous-rencontrer-h3 {
+        font-size: 25px;
+        margin-top: 8px;
+    }
+
+    .nous-rencontrer-flower1 {
+        margin-left: 85%;
+        margin-top: -5%;
+        top: -100px;
+    }
+
+    .nous-contacter-h3 {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .svg-nous-rencontrer::before {
+        top: -6vmax;
+    }
+
+    .team-name-p {
+        font-size: 18px;
+    }
+
+    .nous-rencontrer-flower2 {
+        top: 530px;
+        right: 185px;
+    }
+
+    .team-single-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-column {
+        gap: 50px;
+        margin-bottom: 90px;
+        flex-wrap: nowrap !important;
+    }
+
+    .contact-label {
+        font-size: 18px;
+    }
+
+    .wpcf7-text {
+        width: 350px;
+        height: 55px;
+    }
+
+    .wpcf7-textarea {
+        width: 350px;
+        height: 120px;
+    }
+
+    .wpcf7-submit {
+        width: 160px;
+        height: 55px;
+    }
+
+    .nous-rencontrer-flower2 {
+        top: 375px;
+        right: 170px;
+    }
+
+
+    /* Commander */
+
+    .separateur {
+        width: 60%;
+    }
+
+    .separateur-2 {
+        width: 60%;
+    }
+
+    .commander-title {
+        font-size: 30px;
+    }
+
+    .commander-h3 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .fruit-order {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .vertical-rule {
+        display: none;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        margin-bottom: 30px;
+    }
+
+    .delivery-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        padding-left: 0;
     }
 }
 
@@ -572,4 +969,79 @@ input[type="submit"] {
     .right-flower {
         right: 19.5%;
     }
+
+    .home-page-title-h3 {
+        margin-top: -45px;
+    }
+
+    .home-page-title-h3::before {
+        top: -8vmax;
+    }
+
+    .marc-picture,
+    .vero-picture,
+    .fatiha-picture {
+        width: 120px;
+    }
+
+    .home-page-title-comments {
+        font-size: 26px;
+        margin-top: -50px;
+        margin-bottom: 30px;
+    }
+
+    /* Nous rencontrer  */
+
+    .flower-image {
+        width: 11%;
+        left: -28%;
+        margin-top: -50px;
+        margin-left: 35%;
+    }
+
+    .nous-rencontrer-title {
+        font-size: 28px;
+        margin-top: 35px;
+        text-align: center;
+    }
+
+    .nous-rencontrer-h3 {
+        font-size: 25px;
+        margin-top: 8px;
+    }
+
+    .svg-nous-rencontrer::before {
+        top: -7vmax;
+    }
+
+    .nous-rencontrer-flower1 {
+        width: 15%;
+        margin-left: 84%;
+        margin-top: -7%;
+    }
+
+    .nous-contacter-h3 {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+
+    .nous-rencontrer-flower2 {
+        top: 530px;
+        right: 185px;
+    }
+
+    .team-single-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-column {
+        gap: 100px;
+        margin-bottom: 90px;
+    }
+
+    /* Commander */
+
 }
