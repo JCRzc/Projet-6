@@ -28,6 +28,11 @@ body {
     color: black;
 }
 
+#menu-navigation a:hover {
+    font-size: 13px;
+    font-weight: 700;
+}
+
 .image-logo {
     margin-top: 5px;
     margin-left: 10px;
@@ -42,8 +47,10 @@ body {
     color: white;
 }
 
-.admin-link {
-    background-color: red;
+#menu-navigation li.menu-item a[href*="commander"]:hover {
+    background-color: #C02E44;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 /* Footer */
